@@ -4,6 +4,9 @@ import shoppingItems from "../data/items.json";
 
 export const getData =
   () => (dispatch: AppDispatch, getState: () => RootState) => {
-    dispatch({type:'success',
-  payload:{...getState().products,data:[...shoppingItems]}})
+  
+    dispatch({
+      type: "success",
+      payload: { ...getState().products, data: [...shoppingItems] },
+    });
   };
