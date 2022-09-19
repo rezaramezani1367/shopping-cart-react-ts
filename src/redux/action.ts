@@ -36,14 +36,13 @@ export const AddToCart =
       const currentDataCart = dataCart.filter((itm) => itm.id == item.id);
 
       if (currentDataCart.length) {
-        let index = -1;
-        dataCart.forEach((itm, ind) => {
+        const help = dataCart.map((itm) => {
           if (itm.id == item.id) {
-            index = ind;
+            return { ...itm, quntity: itm.quntity + 1 };
+          } else {
+            return itm;
           }
         });
-        let help = [...dataCart];
-        help[index] = { ...help[index], quntity: help[index].quntity + 1 };
         dispatch({
           type: "successCart",
           payload: {
@@ -84,26 +83,22 @@ export const RemoveToCart =
       const {
         carts: { dataCart },
       } = getState();
-      let index = -1;
-      dataCart.forEach((itm, ind) => {
+      const help = dataCart.map((itm) => {
         if (itm.id == id) {
-          index = ind;
+          return { ...itm, quntity: itm.quntity - 1 };
+        } else {
+          return itm;
         }
       });
-      if (index != -1) {
-        let help = [...dataCart];
-        if (help[index].quntity > 0) {
-          help[index] = { ...help[index], quntity: help[index].quntity - 1 };
-        }
-        dispatch({
-          type: "successCart",
-          payload: {
-            dataCart: [...help],
-            loadingCart: false,
-            errorCart: "",
-          },
-        });
-      }
+
+      dispatch({
+        type: "successCart",
+        payload: {
+          dataCart: [...help],
+          loadingCart: false,
+          errorCart: "",
+        },
+      });
     } catch (error) {
       dispatch({
         type: "errorCart",
