@@ -35,20 +35,20 @@ export const products = (
 
 // cart reducer
 
-export type ShopCartrops = {
+export type ShopCartProps = {
   id: number;
   name: string;
   price: number;
   imgUrl: string;
   quntity: number;
 };
-type stateCart = {
+export type stateCart = {
   loadingCart: boolean;
-  dataCart: ShopCartrops[];
+  dataCart: ShopCartProps[];
   errorCart: string;
 };
 type actionCart = {
-  type: "loadingCart" | "dataCart" | "errorCart";
+  type: "loadingCart" | "successCart" | "errorCart";
   payload: stateCart;
 };
 export const carts = (
@@ -58,7 +58,7 @@ export const carts = (
   switch (type) {
     case "loadingCart":
       return payload;
-    case "dataCart":
+    case "successCart":
       return payload;
     case "errorCart":
       return payload;
