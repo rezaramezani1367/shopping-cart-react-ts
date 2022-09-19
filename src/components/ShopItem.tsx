@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaShoppingCart, FaTrash } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "redux";
-import { AddToCart, RemoveToCart } from "../redux/action";
+import { AddToCart, MinusToCart } from "../redux/action";
 import { ShopItemProps } from "../redux/reducer";
 import { RootState } from "../redux/store";
 import { formatPrice } from "../utilities/formatPrice";
@@ -36,7 +36,7 @@ const ShopItem = ({ id, name, imgUrl, price }: ShopItemProps) => {
         <div className="flex justify-center pb-3">
           <div className="grid grid-cols-4 w-40 justify-center bg-slate-100 h-8 shadow">
             <button
-              onClick={() => dispatch(RemoveToCart(id))}
+              onClick={() => dispatch(MinusToCart(id))}
               className="bg-red-500 text-white hover:bg-red-800 font-bold text-lg flex justify-center items-center"
             >
               {quantity==1?<FaTrash />:"-"}
