@@ -6,7 +6,7 @@ import StoreShop from "./StoreShop";
 
 const RouteSection = () => {
   return (
-    <div className="container md:w-4/5 py-6">
+    <div className="container md:w-4/5 py-6 px-3">
       <Routes>
         <Route path="/" element={<StoreShop />} />
         <Route path="/about" element={<About />} />

@@ -26,9 +26,9 @@ const OffCanvaRight = () => {
       id="offcanvasRight"
       aria-labelledby="offcanvasRightLabel"
     >
-      <div className="offcanvas-header flex items-center justify-between p-4">
+      <div className="offcanvas-header flex items-center justify-between p-4 border-b shadow">
         <h5
-          className="offcanvas-title mb-0 leading-normal font-semibold"
+          className="offcanvas-title mb-0 leading-normal font-semibold text-2xl"
           id="offcanvasRightLabel"
         >
           Cart
@@ -46,14 +46,14 @@ const OffCanvaRight = () => {
             <ItemCart {...item} index={index} key={item.id} />
           ))
         ) : (
-          <div className="text-red-500 font-bold flex justify-center items-center h-full text-2xl">
+          <div className="text-red-600 font-bold flex justify-center items-center h-full text-3xl">
             Cart is Empty
           </div>
         )}
         {dataCart.length ? (
           <div className="flex justify-end">
             <div className="grid grid-cols-3 w-44">
-              <span className="bg-slate-200 p-1.5 font-bold">Result</span>
+              <span className="bg-slate-200 p-1.5 font-bold">Total</span>
               <span className="border p-1.5 col-span-2 font-bold text-red-600">
                 {formatPrice(totalPrice)}
               </span>

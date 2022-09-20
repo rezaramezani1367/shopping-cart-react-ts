@@ -20,9 +20,9 @@ const Header = () => {
   }, [dataCart]);
 
   return (
-    <div className="shadow-lg py-3">
+    <div className="shadow-lg py-3 sticky top-0 bg-white">
       <OffCanvaRight />
-      <div className="container md:w-4/5 flex justify-between items-center ">
+      <div className="container md:w-4/5 px-3  flex justify-between items-center ">
         <div className="flex gap-6 items-center ">
           <NavLink className="nav" to="/" end>
             Store

@@ -8,7 +8,7 @@ type ItemCartProps=ShopCartProps &{index:number}
 const ItemCart = ({ id, name, imgUrl, price, quntity,index }: ItemCartProps) => {
     const dispatch: Dispatch<any>=useDispatch();
   return (
-    <div className="grid grid-cols-3 mb-2 border">
+    <div className="grid grid-cols-3 mb-2 border shadow-sm">
       <img src={imgUrl} className="h-20 w-full object-cover" alt={name} />
       <div className=" flex flex-col justify-center px-4 ">
         <div>

@@ -1,10 +1,9 @@
 import React from "react";
-import useComponentVisible from "../hooks/useComponentVisible";
+
 
 const About = () => {
-  const { ref, isComponentVisible, setIsComponentVisible } =
-    useComponentVisible(false);
-  return <div>About</div>;
+
+  return <div className='font-bold text-lg'>this shopping store has been implemented with React & TypeScript & Redux(Flux) & tailwind css (TW-element)  </div>;
 };
 
 export default About;

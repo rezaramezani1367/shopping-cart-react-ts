@@ -23,4 +23,24 @@
     "price": 14000,
     "imgUrl": "/imgs/car.jpg"
   }
+  ,
+  {
+    "id": 5,
+    "name": "airpods",
+    "price": 505.2,
+    "imgUrl": "/imgs/airpods.jpg"
+  },
+  {
+    "id": 6,
+    "name": "camera",
+    "price": 708.5,
+    "imgUrl": "/imgs/camera.jpg"
+  },
+  {
+    "id": 7,
+    "name": "mouse",
+    "price": 105,
+    "imgUrl": "/imgs/mouse.jpg"
+  }
+ 
 ]

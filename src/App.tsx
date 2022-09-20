@@ -4,8 +4,8 @@ import Header from "./components/Header";
 import RouteSection from "./components/RouteSection";
 
 function App() {
-  return <div className="">
-    <Header />
+  return <div>
+    <Header/>
     <RouteSection/>
   </div>;
 }

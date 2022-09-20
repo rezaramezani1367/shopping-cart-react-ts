@@ -2,6 +2,19 @@ import { AppDispatch, RootState } from "./store";
 
 import shoppingItems from "../data/items.json";
 import { ShopCartProps, ShopItemProps } from "./reducer";
+import Swal from "sweetalert2";
+ 
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-start',
+  showConfirmButton: false,
+  timer: 1500,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
 
 export const getData =
   () => (dispatch: AppDispatch, getState: () => RootState) => {
@@ -97,7 +110,12 @@ export const MinusToCart =
           quntity: dataCart[index].quntity - 1,
         };
       } else {
+        Toast.fire({
+          icon: 'error',
+          title: `${dataCart[index].name}  deleted from cart successfully`
+        })
         dataCart.splice(index, 1);
+       
       }
       dispatch({
         type: "successCart",
@@ -131,6 +149,10 @@ export const DeleteToCart =
       const {
         carts: { dataCart },
       } = getState();
+      Toast.fire({
+        icon: 'error',
+        title: `${dataCart[index].name}  deleted from cart successfully`
+      })
       dataCart.splice(index, 1);
 
       dispatch({
@@ -141,6 +163,7 @@ export const DeleteToCart =
           errorCart: "",
         },
       });
+      
       dataCart.length
         ? localStorage.setItem("cart", JSON.stringify(dataCart))
         : localStorage.removeItem("cart");

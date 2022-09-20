@@ -27,7 +27,7 @@ const ShopItem = ({ id, name, imgUrl, price }: ShopItemProps) => {
 
   return (
     <div className="border shadow rounded-lg overflow-hidden  ">
-      <img src={imgUrl} alt={name} className="h-56 w-full object-cover" />
+      <img src={imgUrl} alt={name} className="h-60 w-full object-cover" />
       <div className="flex justify-between items-baseline py-3 px-4">
         <span className="font-bold text-xl">{name}</span>
         <span className="text-slate-500">{formatPrice(price)}</span>
